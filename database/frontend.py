@@ -23,7 +23,6 @@ def get_selected_row(event):
 def delete_command():
     backend.delete(selected_row[0])
 
-
 def view_command():
     list.delete(0,END)
     for row in backend.view():
@@ -38,7 +37,6 @@ def add_command():
     backend.insert(date_text.get(),earnings_text.get(),excercise_text.get(),study_text.get(),diet_text.get(),python_text.get())
     list.delete(0,END)
     list.insert(END,(date_text.get(),earnings_text.get(),excercise_text.get(),study_text.get(),diet_text.get(),python_text.get()))
-
 
 win = Tk()
 win.wm_title('MY ROUTINE DATABASE')
@@ -82,7 +80,7 @@ list.grid(row = 3,column=0,rowspan=9,columnspan=2)
 sb = Scrollbar(win)
 sb.grid(row = 3,column = 2,rowspan=9)
 
-list.bind('<<ListBoxSelection>>',get_selected_row)
+list.bind('<<ListboxSelect>>',get_selected_row)
 
 b1 = Button(win,text='ADD',width=12,pady=5,command=add_command)
 b1.grid(row=3,column = 3)
@@ -94,7 +92,5 @@ b4 = Button(win,text='View All',width=12,pady=5,command=view_command)
 b4.grid(row=6,column = 3)
 b5 = Button(win,text='Close',width=12,pady=5,command=win.destroy)
 b5.grid(row=7,column = 3)
-
-
 
 win.mainloop()
