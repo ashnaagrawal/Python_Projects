@@ -68,23 +68,44 @@ btn2 = Button(f2,padx=10,pady=3,border=8,font=('arial',20,'bold'),text='2')
 btn2.grid(row=3,column=1)
 btn3 = Button(f2,padx=10,pady=3,border=8,font=('arial',20,'bold'),text='3')
 btn3.grid(row=3,column=2)
-btnminus = Button(f2,padx=10,pady=3,border=8,font=('arial',20,'bold'),text='-')
+btnminus = Button(f2,padx=13,pady=3,border=8,font=('arial',20,'bold'),text='-')
 btnminus.grid(row=3,column=3)
 
 
 #========================Row 4=======================
 btn0 = Button(f2,padx=10,pady=3,border=8,font=('arial',20,'bold'),text='0')
 btn0.grid(row=4,column=0)
-btndot = Button(f2,padx=10,pady=3,border=8,font=('arial',20,'bold'),text='.')
+btndot = Button(f2,padx=13,pady=3,border=8,font=('arial',20,'bold'),text='.')
 btndot.grid(row=4,column=1)
-btndivision = Button(f2,padx=10,pady=3,border=8,font=('arial',20,'bold'),text='/')
-btndivision.grid(row=4,column=2)
-btnmultiply = Button(f2,padx=10,pady=3,border=8,font=('arial',20,'bold'),text='*')
+btndivision = Button(f2,padx=13,pady=3,border=8,font=('arial',20,'bold'),text='/')
+btndivision.grid(row=4,column=2) 
+btnmultiply = Button(f2,padx=13,pady=3,border=8,font=('arial',20,'bold'),text='*')
 btnmultiply.grid(row=4,column=3)
-
 
 #========================Row 5=======================
 
+btnequals = Button(f2,padx=50,pady=3,border=8,font=('arial',20,'bold'),text='=')
+btnequals.grid(row=5,column=0,columnspan=2)
+btnopenbracket = Button(f2,padx=13,pady=3,border=8,font=('arial',20,'bold'),text='(')
+btnopenbracket.grid(row=5,column=2)
+btnclosedbracket = Button(f2,padx=13,pady=3,border=8,font=('arial',20,'bold'),text=')')
+btnclosedbracket.grid(row=5,column=3) 
+
+#====================================Choose meal=======================
+
+Meal1 = IntVar()
+Mealdicator = StringVar(value='Delicious Meal')
+
+lblMeal = Label(f1,font=('arial',16,'bold'),text='Choose Meal',bd=10,anchor=W)
+lblMeal.grid(row=0,column=0)
+txtMeal = ttk.Combobox(f1,font=('arial',16,'bold'),textvariable=Mealdicator)
+txtMeal['values'] = ('Fried rice','Fried rice & Chiken','Sharwama','Cheese','Burger')
+txtMeal.grid(row=0,column=1)
+
+lblQtofMeal = Label(f1,font=('arial',16,'bold'),text='Quantity of Meal',bd=10,anchor=W)
+lblQtofMeal.grid(row=1,column=0)
+txtQtOfMeal = Entry(f1,font=('arial',16,'bold'),textvariable=Meal1,bd=10,insertwidth=4,bg='white',justify='right')
+txtQtOfMeal.grid(row=1,column=1)
 
 
 
